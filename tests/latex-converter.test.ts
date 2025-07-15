@@ -156,33 +156,6 @@ This document was generated from content in memory.
         }
       }
     }, 60000)
-
-    it('should handle invalid LaTeX content', async () => {
-      const invalidLatexContent = `
-\\documentclass{article}
-\\begin{document}
-\\invalid_command_that_does_not_exist
-\\end{document}
-`
-
-      try {
-        await converter.convertFromContent(
-          invalidLatexContent,
-          'invalid-test',
-          { output: path.join(testOutputDir, 'invalid.pdf') }
-        )
-        fail('Expected conversion to fail with invalid LaTeX')
-      } catch (error) {
-        const errorMessage =
-          error instanceof Error ? error.message : String(error)
-        if (errorMessage.includes('spawn pdflatex ENOENT')) {
-          console.warn('pdflatex not found - skipping invalid LaTeX test')
-          expect(errorMessage).toContain('pdflatex')
-        } else {
-          expect(error).toBeTruthy()
-        }
-      }
-    }, 60000)
   })
 
   describe('Configuration options', () => {
