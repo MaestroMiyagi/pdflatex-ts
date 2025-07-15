@@ -1,6 +1,6 @@
 {
   "name": "pdflatex-ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A TypeScript library for converting LaTeX files to PDF using pdflatex. Supports both file conversion and dynamic content generation.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -32,11 +32,20 @@
     "typescript",
     "tex",
     "document",
-    "generation"
+    "generation",
+    "node",
+    "server-side"
   ],
   "author": "Iyari Maldonado",
   "license": "MIT",
   "type": "module",
+  "os": [
+    "!browser"
+  ],
+  "cpu": [
+    "x64",
+    "arm64"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/MaestroMiyagi/pdflatex-ts"

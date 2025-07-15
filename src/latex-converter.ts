@@ -7,6 +7,7 @@ import {
   ConversionResult,
   ConversionCallback,
 } from './types'
+import process from 'process'
 
 interface ConversionConfig {
   outputDir: string
