@@ -1,17 +1,11 @@
-module.exports = {
-  preset: 'ts-jest',
-  testEnvironment: 'node',
-  roots: ['<rootDir>/tests'],
-  testMatch: ['**/*.test.ts'],
-  collectCoverageFrom: ['src/**/*.ts', '!src/**/*.d.ts'],
-  coverageDirectory: 'coverage',
-  coverageReporters: ['text', 'lcov', 'html'],
-  // Force Jest to exit after tests complete
-  forceExit: true,
-  // Clear timers and mocks after each test
-  clearMocks: true,
-  // Timeout for tests
-  testTimeout: 30000,
-  // Detect open handles for debugging
-  detectOpenHandles: false,
-}
+export const preset = 'ts-jest'
+export const testEnvironment = 'node'
+export const roots = ['<rootDir>/tests']
+export const testMatch = ['**/*.test.ts']
+export const collectCoverageFrom = ['src/**/*.ts', '!src/**/*.d.ts']
+export const coverageDirectory = 'coverage'
+export const coverageReporters = ['text', 'lcov', 'html']
+export const forceExit = true
+export const clearMocks = true
+export const testTimeout = 30000
+export const detectOpenHandles = false

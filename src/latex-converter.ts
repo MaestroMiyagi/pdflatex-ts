@@ -8,6 +8,14 @@ import {
   ConversionCallback,
 } from './types'
 
+interface ConversionConfig {
+  outputDir: string
+  outputFile: string
+  timeout: number
+  debug: boolean
+  cleanupAuxFiles: boolean
+}
+
 export class LatexToPdfConverter {
   private static readonly DEFAULT_TIMEOUT = 60000
   private static readonly DEFAULT_OUTPUT_DIR = 'output'
@@ -119,15 +127,16 @@ export class LatexToPdfConverter {
    * @param {object} config The configuration object
    * @param {number} startTime The start time of the conversion
    * @param {ConversionCallback} callback The callback function
-   * @returns {void} 
+   * @returns {void}
    */
   private executeConversion(
     input: string,
-    config: any,
+    config: ConversionConfig,
     startTime: number,
     callback: ConversionCallback
   ): void {
     let processKilled = false
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     let outputBuffer = ''
     let errorBuffer = ''
 

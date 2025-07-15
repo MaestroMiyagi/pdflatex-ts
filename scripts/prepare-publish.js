@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs')
-const path = require('path')
+import fs from 'fs'
+import process from 'process'
 
 console.log('🔍 Verificando que el proyecto esté listo para publicar...')
 
