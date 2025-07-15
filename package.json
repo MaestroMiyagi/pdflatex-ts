@@ -32,11 +32,20 @@
     "typescript",
     "tex",
     "document",
-    "generation"
+    "generation",
+    "node",
+    "server-side"
   ],
   "author": "Iyari Maldonado",
   "license": "MIT",
   "type": "module",
+  "os": [
+    "!browser"
+  ],
+  "cpu": [
+    "x64",
+    "arm64"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/MaestroMiyagi/pdflatex-ts"
