@@ -1,5 +1,5 @@
 import { LatexToPdfConverter } from '../src/latex-converter'
-import { ConversionOptions, ConversionResult } from '../src/types'
+import { ConversionOptions } from '../src/types'
 import * as fs from 'fs'
 import * as path from 'path'
 
@@ -253,16 +253,12 @@ This document was generated from content in memory.
     })
 
     it('should handle directory path instead of file', (done) => {
-      converter.convert(
-        testInputDir,
-        {},
-        (error, result) => {
-          expect(error).toBeTruthy()
-          expect(error?.message).toContain('not a file')
-          expect(result?.success).toBe(false)
-          done()
-        }
-      )
+      converter.convert(testInputDir, {}, (error, result) => {
+        expect(error).toBeTruthy()
+        expect(error?.message).toContain('not a file')
+        expect(result?.success).toBe(false)
+        done()
+      })
     })
   })
 })

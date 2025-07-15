@@ -1,4 +1,4 @@
-const { LatexToPdfConverter } = require('../dist/index')
+import { LatexToPdfConverter } from '../dist/index.js'
 
 const converter = new LatexToPdfConverter()
 
