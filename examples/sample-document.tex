@@ -1,0 +1,106 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\geometry{margin=2.5cm}
+
+\title{Documento de Ejemplo para pdflatex-ts}
+\author{Sistema de Pruebas}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{Introducción}
+
+Este es un documento de ejemplo para probar la funcionalidad de la librería \texttt{pdflatex-ts}. 
+La librería permite convertir archivos LaTeX a PDF de manera programática usando TypeScript.
+
+\section{Características Principales}
+
+\subsection{Conversión de Archivos}
+La librería puede convertir archivos \texttt{.tex} existentes a formato PDF:
+
+\begin{itemize}
+    \item Soporte para documentos complejos
+    \item Manejo de errores robusto
+    \item Configuración flexible de opciones
+    \item Limpieza automática de archivos auxiliares
+\end{itemize}
+
+\subsection{Generación Dinámica}
+También permite generar PDFs dinámicamente desde contenido LaTeX en memoria:
+
+\begin{enumerate}
+    \item Crear contenido LaTeX programáticamente
+    \item Convertir a PDF sin archivos temporales visibles
+    \item Integrar con sistemas de reportes automáticos
+\end{enumerate}
+
+\section{Ejemplo Matemático}
+
+La librería maneja correctamente documentos con contenido matemático:
+
+\begin{equation}
+    E = mc^2
+\end{equation}
+
+\begin{align}
+    \int_{-\infty}^{\infty} e^{-x^2} dx &= \sqrt{\pi} \\
+    \sum_{n=1}^{\infty} \frac{1}{n^2} &= \frac{\pi^2}{6}
+\end{align}
+
+\section{Tablas y Contenido Estructurado}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|c|r|}
+\hline
+\textbf{Característica} & \textbf{Soporte} & \textbf{Versión} \\
+\hline
+Callbacks & ✓ & 1.0.0 \\
+Promises/Async & ✓ & 1.0.0 \\
+Generación Dinámica & ✓ & 1.0.0 \\
+TypeScript & ✓ & 1.0.0 \\
+\hline
+\end{tabular}
+\caption{Características soportadas por pdflatex-ts}
+\end{table}
+
+\section{Código de Ejemplo}
+
+A continuación se muestra un ejemplo de uso básico:
+
+\begin{verbatim}
+import { LatexToPdfConverter } from 'pdflatex-ts'
+
+const converter = new LatexToPdfConverter()
+
+const result = await converter.convertAsync('input.tex', {
+  output: 'output/documento.pdf',
+  debug: true
+})
+
+console.log('PDF generado:', result.outputPath)
+\end{verbatim}
+
+\section{Conclusión}
+
+La librería \texttt{pdflatex-ts} proporciona una interfaz moderna y fácil de usar para 
+la conversión de documentos LaTeX a PDF en entornos Node.js y TypeScript.
+
+Sus principales ventajas son:
+\begin{itemize}
+    \item API intuitiva y bien documentada
+    \item Soporte completo para TypeScript
+    \item Manejo robusto de errores
+    \item Flexibilidad en la configuración
+\end{itemize}
+
+\end{document}

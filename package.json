@@ -1,0 +1,61 @@
+{
+  "name": "pdflatex-ts",
+  "version": "1.0.0",
+  "description": "A TypeScript library for converting LaTeX files to PDF using pdflatex. Supports both file conversion and dynamic content generation.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "jest --forceExit",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --forceExit",
+    "test:debug": "jest --detectOpenHandles",
+    "start": "node dist/index.js",
+    "prepublishOnly": "npm run build && npm run test && node scripts/prepare-publish.js",
+    "clean": "rimraf dist coverage",
+    "lint": "echo 'Linting not configured - consider adding ESLint'",
+    "example": "node examples/basic-usage.js",
+    "check": "npm run build && npm run test"
+  },
+  "keywords": [
+    "latex",
+    "pdf",
+    "converter",
+    "pdflatex",
+    "typescript",
+    "tex",
+    "document",
+    "generation"
+  ],
+  "author": "Iyari Maldonado",
+  "license": "MIT",
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MaestroMiyagi/pdflatex-ts"
+  },
+  "bugs": {
+    "url": "https://github.com/MaestroMiyagi/pdflatex-ts/issues"
+  },
+  "homepage": "https://github.com/MaestroMiyagi/pdflatex-ts#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.0.14",
+    "jest": "^30.0.4",
+    "rimraf": "^5.0.10",
+    "ts-jest": "^29.4.0",
+    "typescript": "^5.8.3"
+  },
+  "peerDependencies": {
+    "node": ">=14.0.0"
+  }
+}
